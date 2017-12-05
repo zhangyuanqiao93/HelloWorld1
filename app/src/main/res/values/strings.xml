@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">HelloWorld</string>
+    <string name="btn_01">点我有惊喜</string>
+    <string name="first_btn">第一个按钮</string>
+    <string name="add_item">Add</string>
+    <string name="remove_item">Remove</string>
+    <string name="second_btn">第二个按钮</string>
+</resources>
