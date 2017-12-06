@@ -5,4 +5,16 @@
     <string name="add_item">Add</string>
     <string name="remove_item">Remove</string>
     <string name="second_btn">第二个按钮</string>
+    <string name="this_is_a_dialog_activity">This is a dialog activity</string>
+    <string name="this_is_a_normal_activity">This is a normal activity</string>
+    <string name="normal">Normal</string>
+    <string name="dialog">Dialog</string>
+    <string name="hello_activity">Hello Activity</string>
+    <string name="third_btn">第三个按钮</string>
+    <string name="third">Third</string>
+    <string name="hello_android">Hello Android</string>
+    <string name="uiwidgetactivity">UIWidgetActivity</string>
+    <string name="btn_02">最好别点我</string>
+    <string name="ui_button">UI_Button</string>
+    <string name="type_something_here">Type Something Here</string>
 </resources>

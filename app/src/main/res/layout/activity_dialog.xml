@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.bridge.helloworld.FirstActivity">
+    android:orientation="vertical"
+    tools:context="com.bridge.helloworld.DialogActivity">
 
-    <Button
-        android:id="@+id/first_btn"
-        android:text="@string/first_btn"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="@string/this_is_a_dialog_activity"
+        />
 
 </LinearLayout>

@@ -12,18 +12,23 @@ import android.view.accessibility.AccessibilityManager;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.bridge.helloworld.util.BaseActivity;
+
 /**
  * date：2017/12/5
  * function: FirstActivity,活动间的数据来回传递，活动之间执行的操作等
  * author： Bridge
  */
-public class FirstActivity extends AppCompatActivity {//继承自AppCompatActivity，实现更好的兼容性质
+public class FirstActivity extends BaseActivity {//继承自AppCompatActivity，实现更好的兼容性质
 
     private static final String TAG = "FirstActivity";
     private Button first_btn;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
+//        常用来在加载布局或者是绑定事件的时候使用。
         super.onCreate(savedInstanceState);
+//        Log.d(TAG, this.toString());//活动的启动模式
+        Log.d(TAG, "Task id is " + getTaskId());
         setContentView(R.layout.activity_first);
         init();
 
@@ -36,12 +41,15 @@ public class FirstActivity extends AppCompatActivity {//继承自AppCompatActivi
             public void onClick(View view) {
                 Toast.makeText(FirstActivity.this,"再点我试试!",Toast.LENGTH_SHORT).show();
                 //String data = "Hello SecondActivity";
-                Intent intent = new Intent(FirstActivity.this,SecondActivity.class);
-                startActivityForResult(intent,1);//携带请求码，要求是唯一值
+//                Intent intent = new Intent(FirstActivity.this,SecondActivity.class);
+//                startActivityForResult(intent,1);//携带请求码，要求是唯一值
                 //intent.putExtra("extra_data",data);//通过键值对的方式传递数据;
 //                intent.setData(Uri.parse("tel:10000"));
                 //intent.addCategory("android.intent.action.MY_ANSWER");
                 //startActivity(intent);//启动活动
+                //Intent intent = new Intent(FirstActivity.this,SecondActivity.class);
+                //startActivity(intent);
+                SecondActivity.actionStart(FirstActivity.this,"data1","data2");
             }
         });
     }
@@ -96,5 +104,11 @@ public class FirstActivity extends AppCompatActivity {//继承自AppCompatActivi
             default:
                 break;
         }
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d(TAG, "onRestart");
     }
 }
