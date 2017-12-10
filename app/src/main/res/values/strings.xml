@@ -17,4 +17,7 @@
     <string name="btn_02">最好别点我</string>
     <string name="ui_button">UI_Button</string>
     <string name="type_something_here">Type Something Here</string>
+    <string name="back">Back</string>
+    <string name="title_text">Title Text</string>
+    <string name="edit">Edit</string>
 </resources>

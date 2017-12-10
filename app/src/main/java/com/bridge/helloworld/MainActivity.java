@@ -1,6 +1,7 @@
 package com.bridge.helloworld;
 
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,6 +24,14 @@ public class MainActivity extends BaseActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+//        隐藏系统自带的标题栏
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null){
+            actionBar.hide();
+        }
+
+
         setContentView(R.layout.activity_main);//给当前的活动引入一个布局
         Log.e("HelloWorldActivity", "onCreate: onCreate execute");//调试信息，debug级别日志
         init();
