@@ -20,4 +20,6 @@
     <string name="back">Back</string>
     <string name="title_text">Title Text</string>
     <string name="edit">Edit</string>
+    <string name="listview_activity">ListView</string>
+    <string name="listviewactivity">listviewactivity</string>
 </resources>

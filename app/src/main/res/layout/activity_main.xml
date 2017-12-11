@@ -6,32 +6,28 @@
     android:layout_height="match_parent"
     tools:context="com.bridge.helloworld.MainActivity">
 
+    <!--引入自定义布局-->
+    <!--<include layout="@layout/title"/>-->
+
     <!--引入自定义控件-->
     <com.bridge.helloworld.util.TitleLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content">
+    </com.bridge.helloworld.util.TitleLayout>
 
 
-    <TextVie
-        android:id="@+id/textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_android"
-        android:gravity="center"
-        android:textAllCaps="false"
-        />
     <Button
         android:id="@+id/btn1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/btn_selector"
+        android:background="@mipmap/ic_launcher"
         android:text="@string/btn_01" />
 
     <Button
         android:id="@+id/btn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/btn_selector"
+        android:background="@mipmap/ic_launcher"
         android:text="@string/btn_02"
         tools:layout_editor_absoluteX="260dp"
         tools:layout_editor_absoluteY="0dp" />
@@ -46,5 +42,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/uiwidgetactivity"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/list_view01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/listviewactivity"
         android:textAllCaps="false" />
 </LinearLayout>

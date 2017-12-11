@@ -39,11 +39,13 @@
         <activity android:name=".NormalActivity" />
         <activity
             android:name=".DialogActivity"
-            android:theme="@style/Theme.AppCompat.Dialog"></activity>
-        <activity android:name=".HelloActivity"></activity>
-        <activity android:name=".ThirdActivity"></activity>
-        <activity android:name=".util.BaseActivity"></activity>
-        <activity android:name=".UIWidgetActivity"></activity>
+            android:theme="@style/Theme.AppCompat.Dialog" />
+        <activity android:name=".HelloActivity" />
+        <activity android:name=".ThirdActivity" />
+        <activity android:name=".util.BaseActivity" />
+        <activity android:name=".UIWidgetActivity" />
+        <activity android:name=".ListViewActivity" />
+        <activity android:name=".RecycleActivity"></activity>
     </application>
 
 </manifest>

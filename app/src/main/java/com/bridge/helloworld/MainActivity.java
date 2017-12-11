@@ -18,12 +18,13 @@ import com.bridge.helloworld.util.BaseActivity;
  * author： Bridge
  */
 public class MainActivity extends BaseActivity {
-    private Button button1,button2,button3,button4;
+    private Button button1,button2,button3,button4,button5;
 
     private static final String TAG = "MainActivity";//快捷键:logt + tab or enter
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);//给当前的活动引入一个布局
 
 //        隐藏系统自带的标题栏
         ActionBar actionBar = getSupportActionBar();
@@ -31,8 +32,6 @@ public class MainActivity extends BaseActivity {
             actionBar.hide();
         }
 
-
-        setContentView(R.layout.activity_main);//给当前的活动引入一个布局
         Log.e("HelloWorldActivity", "onCreate: onCreate execute");//调试信息，debug级别日志
         init();
     }
@@ -46,6 +45,15 @@ public class MainActivity extends BaseActivity {
         button2 = findViewById(R.id.btn2);
         button3 = findViewById(R.id.btn3);
         button4 = findViewById(R.id.UI_widget);
+        button5 = findViewById(R.id.list_view01);
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d(TAG, "onClick: ListViewActivity");
+                Intent intent = new Intent(MainActivity.this,ListViewActivity.class);
+                startActivity(intent);
+            }
+        });
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
