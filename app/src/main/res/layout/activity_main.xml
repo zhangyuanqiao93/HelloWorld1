@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@mipmap/ic_launcher"
     tools:context="com.bridge.helloworld.MainActivity">
 
     <!--引入自定义布局-->
@@ -49,5 +50,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/listviewactivity"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/recyclerviewactivity"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/msg_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/MsgActivity"
         android:textAllCaps="false" />
 </LinearLayout>

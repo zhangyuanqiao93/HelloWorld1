@@ -1,6 +1,5 @@
 package com.bridge.helloworld.adapter;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -12,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bridge.helloworld.R;
+import com.bridge.helloworld.entity.Fruit;
 
 import java.util.List;
 

@@ -45,7 +45,8 @@
         <activity android:name=".util.BaseActivity" />
         <activity android:name=".UIWidgetActivity" />
         <activity android:name=".ListViewActivity" />
-        <activity android:name=".RecycleActivity"></activity>
+        <activity android:name=".RecycleActivity" />
+        <activity android:name=".MsgActivity"></activity>
     </application>
 
 </manifest>

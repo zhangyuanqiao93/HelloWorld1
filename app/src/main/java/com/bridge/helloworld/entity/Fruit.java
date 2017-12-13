@@ -1,4 +1,4 @@
-package com.bridge.helloworld.adapter;
+package com.bridge.helloworld.entity;
 
 /**
  * Created by Bridge on 2017/12/11.
