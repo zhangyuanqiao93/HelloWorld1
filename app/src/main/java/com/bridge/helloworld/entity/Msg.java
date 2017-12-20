@@ -4,6 +4,9 @@ package com.bridge.helloworld.entity;
  * Created by Bridge on 2017/12/13.
  */
 
+/**
+ * 消息的实体类
+ */
 public class Msg {
     public static final int TYPE_RECEIVED = 0;//接收消息
     public static final int TYPE_SENT = 1;//发送消息

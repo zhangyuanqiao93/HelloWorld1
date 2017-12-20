@@ -46,7 +46,9 @@
         <activity android:name=".UIWidgetActivity" />
         <activity android:name=".ListViewActivity" />
         <activity android:name=".RecycleActivity" />
-        <activity android:name=".MsgActivity"></activity>
+        <activity android:name=".MsgActivity" />
+        <activity android:name=".FragmentActivity" />
+        <activity android:name=".NewsContentActivity"></activity>
     </application>
 
 </manifest>

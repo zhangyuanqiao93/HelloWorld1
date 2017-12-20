@@ -18,7 +18,7 @@ import com.bridge.helloworld.util.BaseActivity;
  * author： Bridge
  */
 public class MainActivity extends BaseActivity {
-    private Button button1,button2,button3,button4,button5,button6,button7;
+    private Button button1,button2,button3,button4,button5,button6,button7,button8;
 
     private static final String TAG = "MainActivity";//快捷键:logt + tab or enter
     @Override
@@ -48,6 +48,15 @@ public class MainActivity extends BaseActivity {
         button5 = findViewById(R.id.list_view01);
         button6 = findViewById(R.id.recycler_view);
         button7 = findViewById(R.id.msg_recycler_view);
+        button8 = findViewById(R.id.fragment_activity);//启动FragmentActivity
+        button8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: FragmentActivity");
+                Intent intent = new Intent(MainActivity.this,FragmentActivity.class);
+                startActivity(intent);
+            }
+        });
         button7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

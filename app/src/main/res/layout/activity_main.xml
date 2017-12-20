@@ -10,7 +10,7 @@
     <!--引入自定义布局-->
     <!--<include layout="@layout/title"/>-->
 
-    <!--引入自定义控件-->
+    <!--引入自定义控件 -标题栏-   -->
     <com.bridge.helloworld.util.TitleLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -65,4 +65,12 @@
         android:layout_height="wrap_content"
         android:text="@string/MsgActivity"
         android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/fragment_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/FragmentActivity"
+        android:textAllCaps="false" />
+
 </LinearLayout>

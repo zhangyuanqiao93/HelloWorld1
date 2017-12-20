@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HelloWorld</string>
+    <string name="app_name">My World</string>
     <string name="btn_01">点我有惊喜</string>
     <string name="first_btn">第一个按钮</string>
     <string name="add_item">Add</string>
@@ -25,6 +25,10 @@
     <string name="recyclerviewactivity">recyclerviewactivity</string>
     <string name="send">Send</string>
     <string name="MsgActivity">MsgActivity</string>
+    <string name="FragmentActivity">FragmentActivity</string>
+    <string name="fragment_button">Fragment Button</string>
+    <string name="this_is_the_right_fragment">This is the right Fragment</string>
+    <string name="this_is_another_fragment">This is another Fragment</string>
 
 
 </resources>
