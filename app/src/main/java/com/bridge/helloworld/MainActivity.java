@@ -27,6 +27,8 @@ import com.bridge.helloworld.util.BaseActivity;
 public class MainActivity extends BaseActivity {
     private Button button1,button2,button3,button4,button5,button6,button7,button8,button9;
 
+    private Button forceOffLine;
+
     private static final String TAG = "MainActivity";//快捷键:logt + tab or enter
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -57,6 +59,16 @@ public class MainActivity extends BaseActivity {
         button7 = findViewById(R.id.msg_recycler_view);
         button8 = findViewById(R.id.fragment_activity);//启动FragmentActivity
         button9 = findViewById(R.id.broadcast_activity);//启动BroadcastActivity
+        forceOffLine = findViewById(R.id.force_offline);//强制下线
+
+        forceOffLine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //强制下线
+                Intent intent = new Intent("com.example.broadcastbestpractice.FORCE_OFFLINE");
+                sendBroadcast(intent);
+            }
+        });
         button9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

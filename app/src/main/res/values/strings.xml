@@ -50,6 +50,7 @@
     <string name="password">Password:</string>
     <string name="login2">Login2</string>
     <string name="login">Login</string>
+    <string name="send_force_offline_broadcast">Send force offline broadcast</string>
 
 
 </resources>
