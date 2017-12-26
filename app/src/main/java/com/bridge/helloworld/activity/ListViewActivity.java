@@ -1,4 +1,4 @@
-package com.bridge.helloworld;
+package com.bridge.helloworld.activity;
 
 import android.os.Bundle;
 import android.view.View;
@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.bridge.helloworld.R;
 import com.bridge.helloworld.entity.Fruit;
 import com.bridge.helloworld.adapter.FruitAdapter;
 import com.bridge.helloworld.util.BaseActivity;

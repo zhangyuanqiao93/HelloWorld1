@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bridge.helloworld">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_round"
@@ -17,7 +18,7 @@
             </intent-filter>
         </activity>
         <!-- 自动添加注册，否则无法使用该活动activity -->
-        <activity android:name=".FirstActivity">
+        <activity android:name=".activity.FirstActivity">
 
             <!-- &lt;!&ndash;配置主活动&ndash;&gt; -->
             <!-- <intent-filter> -->
@@ -26,7 +27,7 @@
             <!-- </intent-filter> -->
         </activity>
         <activity
-            android:name=".SecondActivity"
+            android:name=".activity.SecondActivity"
             android:launchMode="singleInstance">
             <intent-filter>
                 <action android:name="android.intent.action.ANSWER" />
@@ -36,19 +37,20 @@
                 <!-- <data android:scheme="http"/> -->
             </intent-filter>
         </activity>
-        <activity android:name=".NormalActivity" />
+        <activity android:name=".activity.NormalActivity" />
         <activity
-            android:name=".DialogActivity"
+            android:name=".activity.DialogActivity"
             android:theme="@style/Theme.AppCompat.Dialog" />
-        <activity android:name=".HelloActivity" />
-        <activity android:name=".ThirdActivity" />
+        <activity android:name=".activity.HelloActivity" />
+        <activity android:name=".activity.ThirdActivity" />
         <activity android:name=".util.BaseActivity" />
-        <activity android:name=".UIWidgetActivity" />
-        <activity android:name=".ListViewActivity" />
-        <activity android:name=".RecycleActivity" />
-        <activity android:name=".MsgActivity" />
-        <activity android:name=".FragmentActivity" />
-        <activity android:name=".NewsContentActivity"></activity>
+        <activity android:name=".activity.UIWidgetActivity" />
+        <activity android:name=".activity.ListViewActivity" />
+        <activity android:name=".activity.RecycleActivity" />
+        <activity android:name=".activity.MsgActivity" />
+        <activity android:name=".activity.FragmentActivity" />
+        <activity android:name=".activity.NewsContentActivity" />
+        <activity android:name=".activity.BroadcastActivity"/>
     </application>
 
 </manifest>

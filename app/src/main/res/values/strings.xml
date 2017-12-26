@@ -29,6 +29,7 @@
     <string name="fragment_button">Fragment Button</string>
     <string name="this_is_the_right_fragment">This is the right Fragment</string>
     <string name="this_is_another_fragment">This is another Fragment</string>
+    <string name="broadcastactivity">BroadcastActivity</string>
 
 
 </resources>

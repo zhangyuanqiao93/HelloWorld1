@@ -1,4 +1,4 @@
-package com.bridge.helloworld.entity;
+package com.bridge.helloworld.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

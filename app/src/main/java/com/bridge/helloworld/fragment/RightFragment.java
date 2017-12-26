@@ -1,4 +1,4 @@
-package com.bridge.helloworld.entity;
+package com.bridge.helloworld.fragment;
 
 import android.content.Context;
 import android.os.Bundle;

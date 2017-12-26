@@ -1,12 +1,12 @@
-package com.bridge.helloworld;
+package com.bridge.helloworld.activity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.bridge.helloworld.entity.NewsContentFragment;
+import com.bridge.helloworld.R;
+import com.bridge.helloworld.fragment.NewsContentFragment;
 
 public class NewsContentActivity extends AppCompatActivity {
 

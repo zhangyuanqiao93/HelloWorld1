@@ -1,4 +1,4 @@
-package com.bridge.helloworld;
+package com.bridge.helloworld.activity;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -10,8 +10,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.bridge.helloworld.entity.AnotherRightFragment;
-import com.bridge.helloworld.entity.RightFragment;
+import com.bridge.helloworld.R;
+import com.bridge.helloworld.fragment.AnotherRightFragment;
+import com.bridge.helloworld.fragment.RightFragment;
 import com.bridge.helloworld.util.BaseActivity;
 
 public class FragmentActivity extends BaseActivity {

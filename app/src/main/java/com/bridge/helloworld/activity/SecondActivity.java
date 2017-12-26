@@ -1,13 +1,13 @@
-package com.bridge.helloworld;
+package com.bridge.helloworld.activity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.bridge.helloworld.R;
 import com.bridge.helloworld.util.BaseActivity;
 
 /**

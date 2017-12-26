@@ -1,17 +1,15 @@
-package com.bridge.helloworld;
+package com.bridge.helloworld.activity;
 
 import android.content.Intent;
-import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.accessibility.AccessibilityManager;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.bridge.helloworld.R;
 import com.bridge.helloworld.util.BaseActivity;
 
 /**

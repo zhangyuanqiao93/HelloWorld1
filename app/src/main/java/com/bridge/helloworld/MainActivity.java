@@ -2,13 +2,20 @@ package com.bridge.helloworld;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.bridge.helloworld.activity.BroadcastActivity;
+import com.bridge.helloworld.activity.FirstActivity;
+import com.bridge.helloworld.activity.FragmentActivity;
+import com.bridge.helloworld.activity.HelloActivity;
+import com.bridge.helloworld.activity.ListViewActivity;
+import com.bridge.helloworld.activity.MsgActivity;
+import com.bridge.helloworld.activity.RecycleActivity;
+import com.bridge.helloworld.activity.UIWidgetActivity;
 import com.bridge.helloworld.util.BaseActivity;
 
 
@@ -18,7 +25,7 @@ import com.bridge.helloworld.util.BaseActivity;
  * author： Bridge
  */
 public class MainActivity extends BaseActivity {
-    private Button button1,button2,button3,button4,button5,button6,button7,button8;
+    private Button button1,button2,button3,button4,button5,button6,button7,button8,button9;
 
     private static final String TAG = "MainActivity";//快捷键:logt + tab or enter
     @Override
@@ -49,6 +56,15 @@ public class MainActivity extends BaseActivity {
         button6 = findViewById(R.id.recycler_view);
         button7 = findViewById(R.id.msg_recycler_view);
         button8 = findViewById(R.id.fragment_activity);//启动FragmentActivity
+        button9 = findViewById(R.id.broadcast_activity);//启动BroadcastActivity
+        button9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: BroadcatActivity");
+                Intent intent = new Intent(MainActivity.this,BroadcastActivity.class);
+                startActivity(intent);
+            }
+        });
         button8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

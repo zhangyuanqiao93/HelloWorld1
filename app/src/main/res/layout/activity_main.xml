@@ -73,4 +73,12 @@
         android:text="@string/FragmentActivity"
         android:textAllCaps="false" />
 
+
+    <Button
+        android:id="@+id/broadcast_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/broadcastactivity"
+        android:textAllCaps="false" />
+
 </LinearLayout>

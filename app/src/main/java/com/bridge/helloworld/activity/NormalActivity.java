@@ -1,8 +1,9 @@
-package com.bridge.helloworld;
+package com.bridge.helloworld.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.bridge.helloworld.R;
 import com.bridge.helloworld.util.BaseActivity;
 
 /**

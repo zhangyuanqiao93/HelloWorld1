@@ -1,10 +1,11 @@
-package com.bridge.helloworld;
+package com.bridge.helloworld.activity;
 
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 
+import com.bridge.helloworld.R;
 import com.bridge.helloworld.entity.Fruit;
 import com.bridge.helloworld.adapter.FruitRecyclerAdapter2;
 import com.bridge.helloworld.util.BaseActivity;

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    tools:context="com.bridge.helloworld.FragmentActivity">
+    tools:context="com.bridge.helloworld.activity.FragmentActivity">
 
         <!--最小限定符-->
 
@@ -13,7 +13,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:name="com.bridge.helloworld.entity.LeftFragment"
+            android:name="com.bridge.helloworld.fragment.LeftFragment"
             />
 
         <fragment
@@ -21,7 +21,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="3"
-            android:name="com.bridge.helloworld.entity.LeftFragment"
+            android:name="com.bridge.helloworld.fragment.LeftFragment"
             />
 
         <FrameLayout
