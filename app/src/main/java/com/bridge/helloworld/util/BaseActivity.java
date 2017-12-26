@@ -1,6 +1,5 @@
 package com.bridge.helloworld.util;
 
-import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -30,14 +29,18 @@ public  class  BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Log.d(TAG, getClass().getSimpleName());
 
-        ActivityController.addActivity(this);
+        ActivityController.addActivity(this);//添加活动
     }
+
+
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         ActivityController.removeActivity(this);
     }
+
+
 
     @Override
     protected void onResume() {
@@ -48,6 +51,9 @@ public  class  BaseActivity extends AppCompatActivity {
         registerReceiver(receiver,mIntentFilter);
     }
 
+    /**
+     * 注销广播
+     */
     @Override
     protected void onPause() {
         super.onPause();
@@ -57,6 +63,9 @@ public  class  BaseActivity extends AppCompatActivity {
         receiver = null;
     }
 
+    /**
+     * 内部类，强制下线功能
+     */
     private class ForceOfflineReceiver extends BroadcastReceiver {
 
         @Override
