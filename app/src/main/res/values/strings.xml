@@ -51,6 +51,9 @@
     <string name="login2">Login2</string>
     <string name="login">Login</string>
     <string name="send_force_offline_broadcast">Send force offline broadcast</string>
+    <string name="save_data">Save Data</string>
+    <string name="get_data">Get DATA</string>
+    <string name="remember_password">Remember Password</string>
 
 
 </resources>

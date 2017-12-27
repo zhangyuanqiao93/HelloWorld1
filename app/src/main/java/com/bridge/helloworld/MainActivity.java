@@ -1,6 +1,8 @@
 package com.bridge.helloworld;
 
+import android.content.BroadcastReceiver;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.ActionBar;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,6 +20,8 @@ import com.bridge.helloworld.activity.RecycleActivity;
 import com.bridge.helloworld.activity.UIWidgetActivity;
 import com.bridge.helloworld.util.BaseActivity;
 
+import java.sql.BatchUpdateException;
+
 
 /**
  * date：2017/12/5
@@ -28,6 +32,8 @@ public class MainActivity extends BaseActivity {
     private Button button1,button2,button3,button4,button5,button6,button7,button8,button9;
 
     private Button forceOffLine;
+    private Button save_data;
+    private Button get_data;
 
     private static final String TAG = "MainActivity";//快捷键:logt + tab or enter
     @Override
@@ -60,6 +66,40 @@ public class MainActivity extends BaseActivity {
         button8 = findViewById(R.id.fragment_activity);//启动FragmentActivity
         button9 = findViewById(R.id.broadcast_activity);//启动BroadcastActivity
         forceOffLine = findViewById(R.id.force_offline);//强制下线
+        save_data = findViewById(R.id.save_data);//存储数据
+        get_data = findViewById(R.id.get_data);//获取SharedPreferences.Editor对象存储的数据
+        get_data.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences editor = getSharedPreferences("data",MODE_PRIVATE);
+                String name = editor.getString("name",null);
+                Integer age = editor.getInt("age",0);
+                Boolean isHouse = editor.getBoolean("isHouse",true);
+
+                Log.d(TAG, "name: "+ name);
+                Log.d(TAG, "age:  "+ age);
+                Log.d(TAG, "isHouse:  "+ isHouse);
+
+            }
+        });
+        save_data.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: 开始存储数据，请稍后");
+                //1.获取SharedPreferences.Editor对象
+                SharedPreferences.Editor editor = getSharedPreferences("data",MODE_PRIVATE).edit();
+
+                //2.添加数据
+                editor.putString("name","Bridge");
+                editor.putInt("age",20);
+                editor.putBoolean("isHouse",true);
+
+                //editor.commit();
+                //3.提交数据
+                editor.apply();
+                Log.d(TAG, "onClick: 保存数据成功！");
+            }
+        });
 
         forceOffLine.setOnClickListener(new View.OnClickListener() {
             @Override
