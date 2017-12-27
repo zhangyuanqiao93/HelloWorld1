@@ -1,0 +1,1733 @@
+Index: app/src/main/java/com/bridge/helloworld/ThirdActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/bridge/helloworld/ThirdActivity.java	(revision )
++++ app/src/main/java/com/bridge/helloworld/ThirdActivity.java	(revision )
+@@ -0,0 +1,34 @@
++package com.bridge.helloworld;
++
++import android.support.v7.app.AppCompatActivity;
++import android.os.Bundle;
++import android.util.Log;
++import android.view.View;
++import android.widget.Button;
++
++import com.bridge.helloworld.controller.ActivityController;
++import com.bridge.helloworld.util.BaseActivity;
++
++public class ThirdActivity extends BaseActivity {
++
++    private static final String TAG = "ThirdActivity";
++    private Button button3;
++    @Override
++    public void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        Log.d(TAG, "Task id is : " + getTaskId());
++        setContentView(R.layout.activity_third);
++        init();
++    }
++
++    private void init() {
++        button3 = findViewById(R.id.third_act_btn);
++        button3.setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View view) {
++                //结束所有的活动，退出程序
++                ActivityController.finishAll();
++            }
++        });
++    }
++}
+Index: app/src/main/res/layout/activity_third.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_third.xml	(revision )
++++ app/src/main/res/layout/activity_third.xml	(revision )
+@@ -0,0 +1,20 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:orientation="vertical"
++    tools:context="com.bridge.helloworld.ThirdActivity">
++
++    <TextView
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:text="@string/third"
++        android:textAllCaps="false"/>
++    <Button
++        android:id="@+id/third_act_btn"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:text="@string/third_btn"
++        android:textAllCaps="false"/>
++</LinearLayout>
+Index: app/src/main/java/com/bridge/helloworld/UIWidgetActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/bridge/helloworld/UIWidgetActivity.java	(revision )
++++ app/src/main/java/com/bridge/helloworld/UIWidgetActivity.java	(revision )
+@@ -0,0 +1,124 @@
++package com.bridge.helloworld;
++
++import android.app.ProgressDialog;
++import android.content.DialogInterface;
++import android.support.v7.app.AlertDialog;
++import android.support.v7.app.AppCompatActivity;
++import android.os.Bundle;
++import android.util.Log;
++import android.view.View;
++import android.widget.Button;
++import android.widget.EditText;
++import android.widget.ImageView;
++import android.widget.ProgressBar;
++import android.widget.Toast;
++
++/**
++ * function：UI_Widget Demo活动
++ * author：Bridge
++ * date：2017/12/6
++ */
++public class UIWidgetActivity extends AppCompatActivity implements View.OnClickListener{
++
++    private static final String TAG = "UIWidgetActivity";
++    /**
++     * 实现点击按钮获取文本框内容
++     */
++    private EditText editText;
++    private Button button;
++    private ImageView imageView;
++    private ProgressBar progressBar;
++
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_uiwidget);
++        init();
++    }
++
++    private void init() {
++        editText = findViewById(R.id.edit_text);
++        //editText.setOnClickListener(this);
++
++        button = findViewById(R.id.ui_btn);
++        button.setOnClickListener(this);
++
++        imageView = findViewById(R.id.image_view);
++        //imageView.setOnClickListener(this);
++
++        progressBar = findViewById(R.id.progress_bar);
++
++    }
++
++    @Override
++    public void onClick(View view) {
++        switch (view.getId()){
++            case R.id.ui_btn:
++
++                /***---------点击按钮获取文本框的内容start-----------***/
++                //String inputText = editText.getText().toString();
++                //Log.d(TAG, "UIWidgetActivity onClick: "+ inputText);
++                //Toast.makeText(UIWidgetActivity.this,inputText,Toast.LENGTH_SHORT).show();
++                /***---------点击按钮获取文本框的内容end-----------***/
++
++                //imageView.setImageResource(R.mipmap.apple_logo01);
++
++                /***---------progress直线进度条start-----------***/
++              /*  int progress = progressBar.getProgress();
++                progress += 10;
++                progressBar.setProgress(progress);*/
++                /***---------progress直线进度条end-----------***/
++
++
++                /***---------progress圆形进度条start-----------***/
++             /*   if (progressBar.getVisibility() == View.GONE){
++                    progressBar.setVisibility(View.VISIBLE);
++                }else {
++                    progressBar.setVisibility(View.GONE);
++                }*/
++                /***---------progress圆形进度条end-----------***/
++
++
++                /***---------点击按钮获取提示框start-----------***/
++                /*AlertDialog.Builder dialog = new AlertDialog.Builder(UIWidgetActivity.this);
++                dialog.setTitle("警告");//设置弹出提示框的标题
++                dialog.setMessage("重要提示：关闭后将不可使用该功能，确定关闭？");//内容
++                dialog.setCancelable(false);//是否可用Back键关闭
++                dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
++                    @Override
++                    public void onClick(DialogInterface dialogInterface, int which) {
++
++                    }
++                });
++                dialog.setPositiveButton("Cancel", new DialogInterface.OnClickListener() {
++                    @Override
++                    public void onClick(DialogInterface dialogInterface, int which) {
++
++                    }
++                });
++                dialog.show();*/
++                /***---------点击按钮获取提示框end-----------***/
++
++
++
++                /***---------点击按钮获取ProgressDialog提示框start-----------***/
++                ProgressDialog progressDialog = new ProgressDialog(UIWidgetActivity.this);
++                progressDialog.setTitle("This is ProgressDialog");
++                progressDialog.setMessage("Loading...");
++                progressDialog.setCancelable(true);
++                progressDialog.show();
++                /***---------点击按钮获取ProgressDialog提示框end-----------***/
++
++
++                break;
++            default:
++                break;
++        }
++    }
++
++    @Override
++    public void onPointerCaptureChanged(boolean hasCapture) {
++
++    }
++}
+Index: app/src/main/res/layout/activity_uiwidget.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_uiwidget.xml	(revision )
++++ app/src/main/res/layout/activity_uiwidget.xml	(revision )
+@@ -0,0 +1,49 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:orientation="vertical"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context="com.bridge.helloworld.UIWidgetActivity">
++
++    <TextView
++        android:id="@+id/textview_1"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:text="@string/hello_android"
++        android:textAllCaps="false"
++        android:gravity="center"
++        android:textSize="24sp"
++        android:textColor="#00ff00"
++        />
++
++    <Button
++        android:id="@+id/ui_btn"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:textAllCaps="false"
++        android:text="@string/ui_button"
++        />
++
++    <EditText
++        android:id="@+id/edit_text"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:hint="@string/type_something_here"
++        android:maxLines="2"/>
++
++    <ImageView
++        android:id="@+id/image_view"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:src="@mipmap/apple_logo01"/>
++
++    <ProgressBar
++        android:id="@+id/progress_bar"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        style="?android:attr/progressBarStyleHorizontal"
++        android:max="100"/>
++
++
++</LinearLayout>
+Index: app/src/main/java/com/bridge/helloworld/HelloActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/bridge/helloworld/HelloActivity.java	(revision )
++++ app/src/main/java/com/bridge/helloworld/HelloActivity.java	(revision )
+@@ -0,0 +1,113 @@
++package com.bridge.helloworld;
++
++import android.content.Intent;
++import android.support.v7.app.AppCompatActivity;
++import android.os.Bundle;
++import android.util.Log;
++import android.view.View;
++import android.widget.Button;
++import android.widget.Toast;
++
++public class HelloActivity extends AppCompatActivity {
++    private static final String TAG = "HelloActivity";
++    private Button normal_btn,dialog_btn;
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        Log.e(TAG, "onCreate:1----error ");
++        Log.d(TAG, "onCreate:1----debug ");
++        Log.v(TAG, "onCreate:1----verbose ");
++        //Toast.makeText(HelloActivity.this, "onCreate", Toast.LENGTH_SHORT).show();
++        setContentView(R.layout.activity_hello);
++
++        /**********----------获取活动被回收之前的数据start----------**************/
++        if (savedInstanceState != null){
++            String tempData = savedInstanceState.getString("tempData");
++            Log.d(TAG, "onCreate: " + tempData);
++        }
++        /**********----------获取活动被回收之前的数据end----------**************/
++
++        init();
++    }
++
++    private void init() {
++        normal_btn = findViewById(R.id.start_normal_act);
++        dialog_btn = findViewById(R.id.start_dialog_act);
++
++        normal_btn.setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View view) {
++                Intent intent = new Intent(HelloActivity.this,NormalActivity.class);
++                startActivity(intent);
++            }
++        });
++
++        dialog_btn.setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View view) {
++                Intent intent = new Intent(HelloActivity.this,DialogActivity.class);
++                startActivity(intent);
++            }
++        });
++    }
++
++    @Override
++    protected void onStart() {
++        super.onStart();
++        Log.e(TAG, "onStart:2");
++        //Toast.makeText(HelloActivity.this, "onStart", Toast.LENGTH_SHORT).show();
++
++    }
++
++    @Override
++    protected void onResume() {
++        super.onResume();
++        Log.e(TAG, "onResume:3 ");
++        //Toast.makeText(HelloActivity.this, "onResume", Toast.LENGTH_SHORT).show();
++
++    }
++
++    @Override
++    protected void onPause() {
++        super.onPause();
++        Log.e(TAG, "onPause:4");
++        //Toast.makeText(HelloActivity.this, "onPause", Toast.LENGTH_SHORT).show();
++
++    }
++
++    @Override
++    protected void onStop() {
++        super.onStop();
++        Log.e(TAG, "onStop:5");
++        //Toast.makeText(HelloActivity.this, "onStop", Toast.LENGTH_SHORT).show();
++
++    }
++
++    @Override
++    protected void onDestroy() {
++        super.onDestroy();
++        Log.e(TAG, "onDestroy:6");
++        //Toast.makeText(HelloActivity.this, "onDestroy", Toast.LENGTH_SHORT).show();
++
++    }
++
++    @Override
++    protected void onRestart() {
++        super.onRestart();
++        Log.e(TAG, "onRestart:7");
++        //Toast.makeText(HelloActivity.this, "onRestart", Toast.LENGTH_SHORT).show();
++    }
++
++    /**
++     * 用于保存临时数据的回调函数，在活动被回收之前一定会执行
++     * @param outState
++     */
++    @Override
++    public void onSaveInstanceState(Bundle outState) {
++        super.onSaveInstanceState(outState);
++
++        String tempData = "Something you just typed";
++        outState.putString("temp_data",tempData);
++
++    }
++}
+Index: app/src/main/res/layout/activity_normal.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_normal.xml	(revision )
++++ app/src/main/res/layout/activity_normal.xml	(revision )
+@@ -0,0 +1,15 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:orientation="vertical"
++    tools:context="com.bridge.helloworld.NormalActivity">
++
++    <TextView
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:text="@string/this_is_a_normal_activity"
++        />
++
++</LinearLayout>
+Index: app/src/main/java/com/bridge/helloworld/NormalActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/bridge/helloworld/NormalActivity.java	(revision )
++++ app/src/main/java/com/bridge/helloworld/NormalActivity.java	(revision )
+@@ -0,0 +1,18 @@
++package com.bridge.helloworld;
++
++import android.support.v7.app.AppCompatActivity;
++import android.os.Bundle;
++
++import com.bridge.helloworld.util.BaseActivity;
++
++/**
++ *普通的活动
++ */
++public class NormalActivity extends BaseActivity {
++
++    @Override
++    public void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_normal);
++    }
++}
+Index: app/src/main/res/layout/activity_hello.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_hello.xml	(revision )
++++ app/src/main/res/layout/activity_hello.xml	(revision )
+@@ -0,0 +1,20 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:orientation="vertical">
++
++    <Button
++        android:id="@+id/start_normal_act"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:text="@string/normal"
++        android:textAllCaps="false"/>
++
++    <Button
++        android:id="@+id/start_dialog_act"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:text="@string/dialog"
++        android:textAllCaps="false"/>
++</LinearLayout>
+Index: app/src/main/java/com/bridge/helloworld/controller/ActivityController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/bridge/helloworld/controller/ActivityController.java	(revision )
++++ app/src/main/java/com/bridge/helloworld/controller/ActivityController.java	(revision )
+@@ -0,0 +1,50 @@
++package com.bridge.helloworld.controller;
++
++import android.app.Activity;
++
++import java.util.ArrayList;
++import java.util.List;
++
++/**
++ * Created by Bridge on 2017/12/6.
++ */
++
++/**
++ * function：创建一个活动管理器来管理当前的所有的活动，
++ * 添加了三个静态方法，add，remove，finishAll；
++ * author：Bridge
++ * date：2017/12/6
++ */
++public class ActivityController {
++
++    public static List<Activity> activities = new ArrayList<>();
++
++    /**
++     * 添加一个Activity
++     * @param activity
++     */
++    public static void addActivity(Activity activity){
++        activities.add(activity);
++    }
++
++    /**
++     * 移除一个Activity
++     * @param activity
++     */
++    public static void removeActivity(Activity activity){
++        activities.remove(activity);
++    }
++
++    /**
++     * 销毁所有的Activity
++     */
++    public static void finishAll(){
++        for (Activity activity:activities){
++            if (!activity.isFinishing()){
++                activity.finish();
++            }
++        }
++        activities.clear();
++    }
++
++}
+Index: app/src/main/java/com/bridge/helloworld/util/BaseActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/bridge/helloworld/util/BaseActivity.java	(revision )
++++ app/src/main/java/com/bridge/helloworld/util/BaseActivity.java	(revision )
+@@ -0,0 +1,30 @@
++package com.bridge.helloworld.util;
++
++import android.annotation.SuppressLint;
++import android.os.Bundle;
++import android.support.v7.app.AppCompatActivity;
++import android.util.Log;
++
++import com.bridge.helloworld.controller.ActivityController;
++
++/**
++ * Created by Bridge on 2017/12/6.
++ */
++
++public  class  BaseActivity extends AppCompatActivity {
++
++    private static final String TAG = "BaseActivity";
++    @Override
++    public void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        Log.d(TAG, getClass().getSimpleName());
++
++        ActivityController.addActivity(this);
++    }
++
++    @Override
++    protected void onDestroy() {
++        super.onDestroy();
++        ActivityController.removeActivity(this);
++    }
++}
+Index: app/src/main/res/layout/activity_dialog.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_dialog.xml	(revision )
++++ app/src/main/res/layout/activity_dialog.xml	(revision )
+@@ -0,0 +1,15 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:orientation="vertical"
++    tools:context="com.bridge.helloworld.DialogActivity">
++
++    <TextView
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:text="@string/this_is_a_dialog_activity"
++        />
++
++</LinearLayout>
+Index: app/src/main/java/com/bridge/helloworld/DialogActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/bridge/helloworld/DialogActivity.java	(revision )
++++ app/src/main/java/com/bridge/helloworld/DialogActivity.java	(revision )
+@@ -0,0 +1,17 @@
++package com.bridge.helloworld;
++
++import android.os.Bundle;
++
++import com.bridge.helloworld.util.BaseActivity;
++
++/**
++ * 对话框式活动
++ */
++public class DialogActivity extends BaseActivity {
++
++    @Override
++    public void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_dialog);
++    }
++}
+Index: app/src/main/java/com/bridge/helloworld/SecondActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/bridge/helloworld/SecondActivity.java	(date 1512461512000)
++++ app/src/main/java/com/bridge/helloworld/SecondActivity.java	(revision )
+@@ -1,23 +1,28 @@
+ package com.bridge.helloworld;
+ 
++import android.content.Context;
+ import android.content.Intent;
+ import android.support.v7.app.AppCompatActivity;
+ import android.os.Bundle;
++import android.util.Log;
+ import android.view.View;
+ import android.widget.Button;
+ 
++import com.bridge.helloworld.util.BaseActivity;
++
+ /**
+  * date：2017/12/5
+  * function: SecondActivity,活动间的数据来回传递，活动之间执行的操作等
+  * author： Bridge
+  */
+-public class SecondActivity extends AppCompatActivity {
++public class SecondActivity extends BaseActivity {
+ 
+     private static final String TAG = "SecondActivity";
+     private Button button2;
+     @Override
+-    protected void onCreate(Bundle savedInstanceState) {
++    public void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
++        Log.d(TAG, "Task id is " + getTaskId());
+         setContentView(R.layout.activity_second);
+         /**
+          * 通过intent对象获取由前一个活动传递过来的数据
+@@ -29,13 +34,30 @@
+         button2.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+-                Intent intent = new Intent();
+-                intent.putExtra("data_return","Hello FirstActivity");
+-                setResult(RESULT_OK,intent);//RESULT_OK--->return -1;
+-                finish();
++//                Intent intent = new Intent();
++//                intent.putExtra("data_return","Hello FirstActivity");
++//                setResult(RESULT_OK,intent);//RESULT_OK--->return -1;
++//                finish();
++                Intent intent = new Intent(SecondActivity.this,ThirdActivity.class);
++                startActivity(intent);
+             }
+         });
+ 
++    }
++
++    /**
++     * function：启动活动的最佳实现方法
++     * author：Bridge
++     * date：2017/12/6
++     * @param context 上下文环境
++     * @param data1 参数1
++     * @param data2 参数2
++     */
++    public static void actionStart(Context context,String data1,String data2){
++        Intent intent = new Intent(context,SecondActivity.class);
++        intent.putExtra("param1",data1);
++        intent.putExtra("param2",data2);
++        context.startActivity(intent);
+     }
+ 
+     /**
+@@ -49,4 +71,11 @@
+         finish();
+ //        super.onBackPressed();//置于该方法的第一行不会返回正确结果；删除或者放在最后一行执行得到正确的结果。why？
+     }
++
++
++    @Override
++    protected void onDestroy() {
++        super.onDestroy();
++        Log.d(TAG, "onDestroy");
++    }
+ }
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/values/strings.xml	(date 1512461512000)
++++ app/src/main/res/values/strings.xml	(revision )
+@@ -5,4 +5,16 @@
+     <string name="add_item">Add</string>
+     <string name="remove_item">Remove</string>
+     <string name="second_btn">第二个按钮</string>
++    <string name="this_is_a_dialog_activity">This is a dialog activity</string>
++    <string name="this_is_a_normal_activity">This is a normal activity</string>
++    <string name="normal">Normal</string>
++    <string name="dialog">Dialog</string>
++    <string name="hello_activity">Hello Activity</string>
++    <string name="third_btn">第三个按钮</string>
++    <string name="third">Third</string>
++    <string name="hello_android">Hello Android</string>
++    <string name="uiwidgetactivity">UIWidgetActivity</string>
++    <string name="btn_02">最好别点我</string>
++    <string name="ui_button">UI_Button</string>
++    <string name="type_something_here">Type Something Here</string>
+ </resources>
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/AndroidManifest.xml	(date 1512461512000)
++++ app/src/main/AndroidManifest.xml	(revision )
+@@ -25,14 +25,25 @@
+             <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
+             <!-- </intent-filter> -->
+         </activity>
+-        <activity android:name=".SecondActivity">
++        <activity
++            android:name=".SecondActivity"
++            android:launchMode="singleInstance">
+             <intent-filter>
+-                <action android:name="android.intent.action.ANSWER"/>
+-                <category android:name="android.intent.category.DEFAULT"/>
+-                <!--<category android:name="android.intent.category.MY_DEFAULT"/>-->
+-                <!--<data android:scheme="http"/>-->
++                <action android:name="android.intent.action.ANSWER" />
++
++                <category android:name="android.intent.category.DEFAULT" />
++                <!-- <category android:name="android.intent.category.MY_DEFAULT"/> -->
++                <!-- <data android:scheme="http"/> -->
+             </intent-filter>
+         </activity>
++        <activity android:name=".NormalActivity" />
++        <activity
++            android:name=".DialogActivity"
++            android:theme="@style/Theme.AppCompat.Dialog"></activity>
++        <activity android:name=".HelloActivity"></activity>
++        <activity android:name=".ThirdActivity"></activity>
++        <activity android:name=".util.BaseActivity"></activity>
++        <activity android:name=".UIWidgetActivity"></activity>
+     </application>
+ 
+ </manifest>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_first.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_first.xml	(date 1512461512000)
++++ app/src/main/res/layout/activity_first.xml	(revision )
+@@ -1,7 +1,7 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:app="http://schemas.android.com/apk/res-auto"
+     xmlns:tools="http://schemas.android.com/tools"
++    android:orientation="vertical"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     tools:context="com.bridge.helloworld.FirstActivity">
+Index: app/src/main/java/com/bridge/helloworld/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/bridge/helloworld/MainActivity.java	(date 1512461512000)
++++ app/src/main/java/com/bridge/helloworld/MainActivity.java	(revision )
+@@ -8,28 +8,50 @@
+ import android.widget.Button;
+ import android.widget.Toast;
+ 
++import com.bridge.helloworld.util.BaseActivity;
++
+ 
+ /**
+  * date：2017/12/5
+  * function: MainActivity，主活动
+  * author： Bridge
+  */
+-public class MainActivity extends AppCompatActivity {
+-    private Button button1,button2;
++public class MainActivity extends BaseActivity {
++    private Button button1,button2,button3,button4;
+ 
+     private static final String TAG = "MainActivity";//快捷键:logt + tab or enter
+     @Override
+-    protected void onCreate(Bundle savedInstanceState) {
++    public void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_main);//给当前的活动引入一个布局
+-        Log.d("HelloWorldActivity", "onCreate: onCreate execute");//调试信息，debug级别日志
++        Log.e("HelloWorldActivity", "onCreate: onCreate execute");//调试信息，debug级别日志
+         init();
+     }
+ 
++
++
+     private void init() {
+-        //Log.d("data", "onCreate: onCreate execute");//调试信息，debug级别日志
++        Log.wtf(TAG, "init" );//在输出日志的同时，会把此处代码此时的执行路径(调用栈)打印出来
++        Log.e("data", "onCreate: onCreate execute");//调试信息，debug级别日志
+         button1 = findViewById(R.id.btn1);
+         button2 = findViewById(R.id.btn2);
++        button3 = findViewById(R.id.btn3);
++        button4 = findViewById(R.id.UI_widget);
++        button4.setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View view) {
++                Intent intent = new Intent(MainActivity.this,UIWidgetActivity.class);
++                startActivity(intent);
++            }
++        });
++        button3.setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View view) {
++                Log.e(TAG, "onClick: HelloActivity");
++                Intent intent = new Intent(MainActivity.this,HelloActivity.class);
++                startActivity(intent);
++            }
++        });
+         button1.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+@@ -46,4 +68,55 @@
+             }
+         });
+     }
++
++
++    /**
++     * 不可见变为可见时调用onStart();
++     */
++    @Override
++    protected void onStart() {
++        super.onStart();
++
++    }
++
++    /**
++     * 在活动完全不可见的时候调用
++     */
++    @Override
++    protected void onStop() {
++        super.onStop();
++    }
++
++    /**
++     * 该方法在活动准备和用户进行交互的时候调用，此时活动一定位于栈顶，并且处于运行状态
++     */
++    @Override
++    protected void onResume() {
++        super.onResume();
++
++    }
++
++    /**
++     * 系统准备启动或者恢复另一个活动的时候调用
++     */
++    @Override
++    protected void onPause() {
++        super.onPause();
++    }
++
++    /**
++     * 活动被销毁之前调用
++     */
++    @Override
++    protected void onDestroy() {
++        super.onDestroy();
++    }
++
++    /**
++     * 由停止转变为运行状态
++     */
++    @Override
++    protected void onRestart() {
++        super.onRestart();
++    }
+ }
+Index: app/src/main/res/layout/activity_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_main.xml	(date 1512461512000)
++++ app/src/main/res/layout/activity_main.xml	(revision )
+@@ -1,33 +1,44 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:app="http://schemas.android.com/apk/res-auto"
+     xmlns:tools="http://schemas.android.com/tools"
++    android:orientation="vertical"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     tools:context="com.bridge.helloworld.MainActivity">
+ 
+     <TextView
++        android:id="@+id/textview"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+-        android:text="Hello World!"
+-        app:layout_constraintBottom_toBottomOf="parent"
+-        app:layout_constraintLeft_toLeftOf="parent"
+-        app:layout_constraintRight_toRightOf="parent"
+-        app:layout_constraintTop_toTopOf="parent"/>
+-
++        android:text="@string/hello_android"
++        android:gravity="center"
++        android:textAllCaps="false"
++        />
+     <Button
+         android:id="@+id/btn1"
+-        android:text="@string/btn_01"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+-        android:background="@drawable/btn_selector"/>
++        android:background="@drawable/btn_selector"
++        android:text="@string/btn_01" />
+ 
+     <Button
+         android:id="@+id/btn2"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:background="@drawable/btn_selector"
+-        android:text="@string/btn_01"
++        android:text="@string/btn_02"
+         tools:layout_editor_absoluteX="260dp"
+         tools:layout_editor_absoluteY="0dp" />
++    <Button
++        android:id="@+id/btn3"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:text="@string/hello_activity"
++        android:textAllCaps="false"/>
++    <Button
++        android:id="@+id/UI_widget"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:text="@string/uiwidgetactivity"
++        android:textAllCaps="false" />
+ </LinearLayout>
+Index: app/src/main/java/com/bridge/helloworld/FirstActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/bridge/helloworld/FirstActivity.java	(date 1512461512000)
++++ app/src/main/java/com/bridge/helloworld/FirstActivity.java	(revision )
+@@ -12,18 +12,23 @@
+ import android.widget.Button;
+ import android.widget.Toast;
+ 
++import com.bridge.helloworld.util.BaseActivity;
++
+ /**
+  * date：2017/12/5
+  * function: FirstActivity,活动间的数据来回传递，活动之间执行的操作等
+  * author： Bridge
+  */
+-public class FirstActivity extends AppCompatActivity {//继承自AppCompatActivity，实现更好的兼容性质
++public class FirstActivity extends BaseActivity {//继承自AppCompatActivity，实现更好的兼容性质
+ 
+     private static final String TAG = "FirstActivity";
+     private Button first_btn;
+     @Override
+-    protected void onCreate(Bundle savedInstanceState) {
++    public void onCreate(Bundle savedInstanceState) {
++//        常用来在加载布局或者是绑定事件的时候使用。
+         super.onCreate(savedInstanceState);
++//        Log.d(TAG, this.toString());//活动的启动模式
++        Log.d(TAG, "Task id is " + getTaskId());
+         setContentView(R.layout.activity_first);
+         init();
+ 
+@@ -36,12 +41,15 @@
+             public void onClick(View view) {
+                 Toast.makeText(FirstActivity.this,"再点我试试!",Toast.LENGTH_SHORT).show();
+                 //String data = "Hello SecondActivity";
+-                Intent intent = new Intent(FirstActivity.this,SecondActivity.class);
+-                startActivityForResult(intent,1);//携带请求码，要求是唯一值
++//                Intent intent = new Intent(FirstActivity.this,SecondActivity.class);
++//                startActivityForResult(intent,1);//携带请求码，要求是唯一值
+                 //intent.putExtra("extra_data",data);//通过键值对的方式传递数据;
+ //                intent.setData(Uri.parse("tel:10000"));
+                 //intent.addCategory("android.intent.action.MY_ANSWER");
+                 //startActivity(intent);//启动活动
++                //Intent intent = new Intent(FirstActivity.this,SecondActivity.class);
++                //startActivity(intent);
++                SecondActivity.actionStart(FirstActivity.this,"data1","data2");
+             }
+         });
+     }
+@@ -97,4 +105,10 @@
+                 break;
+         }
+     }
++
++    @Override
++    protected void onRestart() {
++        super.onRestart();
++        Log.d(TAG, "onRestart");
++    }
+ }
+diff --git app/src/main/res/mipmap-xxhdpi/apple_logo01.jpg app/src/main/res/mipmap-xxhdpi/apple_logo01.jpg
+new file mode 100644
+index 0000000000000000000000000000000000000000..ddf34c818b23c3d6b9ea038dc129c99329915e21
+GIT binary patch
+literal 41727
+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
+VFnmda-y4IoM?8HGHF!i``4{s_+kOB5
+
