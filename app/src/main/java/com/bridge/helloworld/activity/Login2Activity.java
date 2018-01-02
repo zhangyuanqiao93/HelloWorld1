@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
-import android.view.SurfaceHolder;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -70,9 +69,6 @@ public class Login2Activity extends BaseActivity {
                 //如果账号admin,密码123456表示登录成功
 
 
-                /**
-                 * 数据应该动态从数据库读取，此处模拟数据
-                 */
                 if (account.equals("admin") && password.equals("123456")){
                     Log.e(TAG, "onClick: 登录成功!");
                     Log.e(TAG, "onClick: -->打印输入的账号: " + account );
@@ -84,6 +80,7 @@ public class Login2Activity extends BaseActivity {
                         editor.putString("account",account);
                         editor.putString("password",password);
                     }else {
+                        //不选择记住密码，则清空文本框的账号和密码文本
                         editor.clear();
                     }
                     editor.apply();

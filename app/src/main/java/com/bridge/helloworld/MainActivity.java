@@ -1,8 +1,8 @@
 package com.bridge.helloworld;
 
-import android.content.BroadcastReceiver;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.ActionBar;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.bridge.helloworld.activity.BroadcastActivity;
+import com.bridge.helloworld.activity.DatabaseActivity;
 import com.bridge.helloworld.activity.FirstActivity;
 import com.bridge.helloworld.activity.FragmentActivity;
 import com.bridge.helloworld.activity.HelloActivity;
@@ -19,6 +20,7 @@ import com.bridge.helloworld.activity.MsgActivity;
 import com.bridge.helloworld.activity.RecycleActivity;
 import com.bridge.helloworld.activity.UIWidgetActivity;
 import com.bridge.helloworld.util.BaseActivity;
+import com.bridge.helloworld.database.MyDatabaseHelper;
 
 import java.sql.BatchUpdateException;
 
@@ -29,11 +31,16 @@ import java.sql.BatchUpdateException;
  * author： Bridge
  */
 public class MainActivity extends BaseActivity {
+
     private Button button1,button2,button3,button4,button5,button6,button7,button8,button9;
 
     private Button forceOffLine;
     private Button save_data;
     private Button get_data;
+    private Button create_db;
+    private MyDatabaseHelper dbHelper;
+    private Button database_act;//DatabaseActivity
+
 
     private static final String TAG = "MainActivity";//快捷键:logt + tab or enter
     @Override
@@ -68,6 +75,26 @@ public class MainActivity extends BaseActivity {
         forceOffLine = findViewById(R.id.force_offline);//强制下线
         save_data = findViewById(R.id.save_data);//存储数据
         get_data = findViewById(R.id.get_data);//获取SharedPreferences.Editor对象存储的数据
+        create_db = findViewById(R.id.create_db);//创建数据库
+        database_act = findViewById(R.id.database_activity);
+        database_act.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: DatabaseActivity");
+                Intent intent = new Intent(MainActivity.this,DatabaseActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        dbHelper = new MyDatabaseHelper(this,"BookStore.db",null,2);
+
+        create_db.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: 开始创建数据库");
+                SQLiteDatabase writableDatabase = dbHelper.getWritableDatabase();
+            }
+        });
         get_data.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -112,7 +139,7 @@ public class MainActivity extends BaseActivity {
         button9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(TAG, "onClick: BroadcatActivity");
+                Log.d(TAG, "onClick: BroadcastActivity");
                 Intent intent = new Intent(MainActivity.this,BroadcastActivity.class);
                 startActivity(intent);
             }
