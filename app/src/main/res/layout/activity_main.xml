@@ -93,12 +93,14 @@
         android:id="@+id/force_offline"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textAllCaps="false"
         android:text="@string/send_force_offline_broadcast" />
 
     <Button
     android:id="@+id/save_data"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+        android:textAllCaps="false"
     android:text="@string/save_data"
     />
 
@@ -106,6 +108,7 @@
         android:id="@+id/get_data"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textAllCaps="false"
         android:text="@string/get_data" />
 
 
@@ -113,13 +116,22 @@
         android:id="@+id/create_db"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textAllCaps="false"
         android:text="@string/create_db" />
 
     <Button
         android:id="@+id/database_activity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textAllCaps="false"
         android:text="@string/databaseactivity" />
+
+    <Button
+        android:id="@+id/provider_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="@string/provider_activity" />
 
     </LinearLayout>
     </ScrollView>

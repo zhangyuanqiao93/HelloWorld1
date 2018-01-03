@@ -2,9 +2,10 @@
 
 <litepal>
     <dbname value="BookStore"/>
-    <version value="1"/>
+    <!--  数据库升级版本1-2 -->
+    <version value="2"/>
     <list>
-        <mapping class="com.bridge.helloworld.entity.Book">
-        </mapping>
+        <mapping class="com.bridge.helloworld.entity.Book"/>
+        <mapping class="com.bridge.helloworld.entity.Category"/>
     </list>
 </litepal>

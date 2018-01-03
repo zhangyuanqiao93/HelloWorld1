@@ -1,5 +1,7 @@
 package com.bridge.helloworld.entity;
 
+
+import org.litepal.crud.DataSupport;//手动引入
 /**
  * Created by Bridge on 2018/1/2.
  *
@@ -9,13 +11,24 @@ package com.bridge.helloworld.entity;
 /**
  * Book 实体，验证litepal数据库
  */
-public class Book {
+public class Book extends DataSupport {
 
-    private Integer id;
-    private String name;
-    private String author;
-    private Double price;
-    private Integer pages;
+    private Integer id;//Book类主键
+    private String name;//书名
+    private String author;//作者
+    private Double price;//价格
+    private Integer pages;//页数
+
+    //添加一个字段，press,出版社
+    private String press;
+
+    public String getPress() {
+        return press;
+    }
+
+    public void setPress(String press) {
+        this.press = press;
+    }
 
     public Integer getId() {
         return id;

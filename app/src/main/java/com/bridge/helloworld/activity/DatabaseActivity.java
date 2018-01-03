@@ -10,16 +10,27 @@ import android.view.View;
 import android.widget.Button;
 
 import com.bridge.helloworld.R;
+import com.bridge.helloworld.dao.LoveDao;
 import com.bridge.helloworld.database.MyDatabaseHelper;
+import com.bridge.helloworld.entity.Book;
+import com.bridge.helloworld.entity.DaoSession;
+import com.bridge.helloworld.entity.Shop;
 
+import org.litepal.crud.DataSupport;
 import org.litepal.tablemanager.Connector;
 
+import java.util.List;
+
 public class DatabaseActivity extends AppCompatActivity implements View.OnClickListener{
+
     private static final String TAG = "DatabaseActivity";
+    private static int i = 10;
 
     private MyDatabaseHelper myDatabaseHelper;
     private Button add_data,update_data,delete_data,query_data,create_data;
     private ContentValues contentValues;
+    private Button litepal_add_data,greendao_add_data;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,12 +56,19 @@ public class DatabaseActivity extends AppCompatActivity implements View.OnClickL
 
         create_data = findViewById(R.id.create_db);
         create_data.setOnClickListener(this);
+
+        litepal_add_data = findViewById(R.id.litepal_add_data);
+        litepal_add_data.setOnClickListener(this);
+
+
+        greendao_add_data = findViewById(R.id.greendao_add_data);
+        greendao_add_data.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
 
-        myDatabaseHelper = new MyDatabaseHelper(this,"BookStore.db",null,2);
+        myDatabaseHelper = new MyDatabaseHelper(this,"BookStore.db",null,1);
         SQLiteDatabase writableDatabase = myDatabaseHelper.getWritableDatabase();
         contentValues = new ContentValues();
 
@@ -127,9 +145,58 @@ public class DatabaseActivity extends AppCompatActivity implements View.OnClickL
                 break;
 
             case R.id.create_db:
-                //Connector.getDatabase();
-                Log.d(TAG, "onClick:   Connector.getDatabase()--->Litepal");
+                Log.d(TAG, "onClick:   Connector.getDatabase()--->Litepal 1");
+                writableDatabase.execSQL("drop table if exists Book");
+                writableDatabase.execSQL("drop table if exists Category");
+                Connector.getDatabase();
+                Log.d(TAG, "onClick:   Connector.getDatabase()--->Litepal 2");
+
+                Log.d(TAG, "pages: " + contentValues.get("pages"));
+                Log.d(TAG, "name: " + contentValues.get("name"));
+                Log.d(TAG, "author: " + contentValues.get("author"));
                 break;
+
+            case R.id.litepal_add_data:
+                Log.d(TAG, "litepal add data.");
+                Book book = new Book();
+                book.setName("Android 第一行代码");
+                book.setAuthor("郭霖");
+                book.setPrice(39.9);
+                book.setPress("清华大学出版社");
+
+                book.save();//保存数据
+                Log.d(TAG, "****保存数据成功****");
+
+                List<Book> books = DataSupport.findAll(Book.class);
+                for (Book mybook: books){
+                    Log.d(TAG, "Name: " + mybook.getName());
+                    Log.d(TAG, "Author: " + mybook.getAuthor());
+                    Log.d(TAG, "Pages: " + mybook.getPages());
+                    Log.d(TAG, "Price: " + mybook.getPrice());
+                    Log.d(TAG, "Id: " + mybook.getId());
+                }
+                break;
+
+            case R.id.greendao_add_data:
+
+                Shop shop = new Shop();
+                shop.setType(Shop.TYPE_LOVE);
+                shop.setAddress("四川成都");
+                shop.setImage_url("https://img.alicdn.com/bao/uploaded/i2/TB1N4V2PXXXXXa.XFXXXXXXXXXX_!!0-item_pic.jpg_640x640q50.jpg");
+                shop.setPrice("29.88");
+                shop.setSell_num(180103);
+                shop.setName("正宗梅菜扣肉 聪厨梅" + "干菜扣肉 家宴常备方便菜虎皮红烧肉 2盒包邮" + i ++);
+
+
+//                LoveDao.insertLove(shop);//空指针异常，why
+
+                Log.d(TAG, "Type is : "+ shop.getType());
+                Log.d(TAG, "Address is : "+ shop.getAddress());
+                Log.d(TAG, "Price is : "+ shop.getPrice());
+                Log.d(TAG, "Name is : "+ shop.getName());
+
+                break;
+
             default:
                 break;
         }

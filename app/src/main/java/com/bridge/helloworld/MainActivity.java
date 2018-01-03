@@ -17,6 +17,7 @@ import com.bridge.helloworld.activity.FragmentActivity;
 import com.bridge.helloworld.activity.HelloActivity;
 import com.bridge.helloworld.activity.ListViewActivity;
 import com.bridge.helloworld.activity.MsgActivity;
+import com.bridge.helloworld.activity.ProviderActivity;
 import com.bridge.helloworld.activity.RecycleActivity;
 import com.bridge.helloworld.activity.UIWidgetActivity;
 import com.bridge.helloworld.util.BaseActivity;
@@ -40,6 +41,8 @@ public class MainActivity extends BaseActivity {
     private Button create_db;
     private MyDatabaseHelper dbHelper;
     private Button database_act;//DatabaseActivity
+
+    private Button provider_act;//ProviderActivity
 
 
     private static final String TAG = "MainActivity";//快捷键:logt + tab or enter
@@ -77,6 +80,16 @@ public class MainActivity extends BaseActivity {
         get_data = findViewById(R.id.get_data);//获取SharedPreferences.Editor对象存储的数据
         create_db = findViewById(R.id.create_db);//创建数据库
         database_act = findViewById(R.id.database_activity);
+        provider_act = findViewById(R.id.provider_activity);
+        provider_act.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: ProviderActivity");
+                Intent intent = new Intent(MainActivity.this,ProviderActivity.class);
+                startActivity(intent);
+            }
+        });
+
         database_act.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

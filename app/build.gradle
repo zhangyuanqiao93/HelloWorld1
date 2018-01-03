@@ -1,5 +1,15 @@
 apply plugin: 'com.android.application'
 //apply plugin: 'com.android.library'
+//3.使用greendao
+apply plugin: 'org.greenrobot.greendao'
+
+//4.greendao配置
+greendao {
+    //版本号，升级时可配置
+    schemaVersion 1
+    //daoPackage 'com.bridge.helloworld.greendao'
+    //targetGenDir 'src/main/java'
+}
 
 android {
     compileSdkVersion 26
@@ -38,4 +48,7 @@ dependencies {
     implementation 'com.android.support:cardview-v7:26.0.0-beta1'
     //litepal数据库引用库
     implementation 'org.litepal.android:core:1.6.1'
+    //2.GreenDao3依赖
+    implementation 'org.greenrobot:greendao:3.2.0'
+
 }
