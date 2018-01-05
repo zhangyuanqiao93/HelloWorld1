@@ -15,13 +15,14 @@ import com.bridge.helloworld.database.MyDatabaseHelper;
 import com.bridge.helloworld.entity.Book;
 import com.bridge.helloworld.entity.DaoSession;
 import com.bridge.helloworld.entity.Shop;
+import com.bridge.helloworld.util.BaseActivity;
 
 import org.litepal.crud.DataSupport;
 import org.litepal.tablemanager.Connector;
 
 import java.util.List;
 
-public class DatabaseActivity extends AppCompatActivity implements View.OnClickListener{
+public class DatabaseActivity extends BaseActivity implements View.OnClickListener{
 
     private static final String TAG = "DatabaseActivity";
     private static int i = 10;
@@ -33,7 +34,7 @@ public class DatabaseActivity extends AppCompatActivity implements View.OnClickL
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_database);
         init();

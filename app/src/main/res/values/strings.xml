@@ -64,6 +64,7 @@
     <string name="litepal_add_data">Litepal Add Data</string>
     <string name="greendao_add">GreenDao Add</string>
     <string name="provider_activity">Provider Activity</string>
+    <string name="make_call">Make Call</string>
 
 
 </resources>
