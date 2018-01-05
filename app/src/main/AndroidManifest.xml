@@ -97,8 +97,7 @@
         </activity>
         <provider
             android:authorities="com.bridge.helloworld.provider"
-            android:name=".provider.MyProvider"
-            android:exported="false" />
+            android:name=".provider.MyProvider" />
     </application>
 
 </manifest>

@@ -10,13 +10,14 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import com.bridge.helloworld.R;
+import com.bridge.helloworld.util.BaseActivity;
 
 /**
  * function：UI_Widget Demo活动
  * author：Bridge
  * date：2017/12/6
  */
-public class UIWidgetActivity extends AppCompatActivity implements View.OnClickListener{
+public class UIWidgetActivity extends BaseActivity implements View.OnClickListener{
 
     private static final String TAG = "UIWidgetActivity";
     /**
@@ -29,7 +30,7 @@ public class UIWidgetActivity extends AppCompatActivity implements View.OnClickL
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_uiwidget);
         init();

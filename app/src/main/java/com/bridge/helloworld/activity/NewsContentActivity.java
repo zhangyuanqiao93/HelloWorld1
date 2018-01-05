@@ -7,11 +7,12 @@ import android.os.Bundle;
 
 import com.bridge.helloworld.R;
 import com.bridge.helloworld.fragment.NewsContentFragment;
+import com.bridge.helloworld.util.BaseActivity;
 
-public class NewsContentActivity extends AppCompatActivity {
+public class NewsContentActivity extends BaseActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_content);
 

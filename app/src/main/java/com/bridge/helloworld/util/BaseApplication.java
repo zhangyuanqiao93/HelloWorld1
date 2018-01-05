@@ -7,6 +7,7 @@ import com.bridge.helloworld.entity.DaoMaster;
 import com.bridge.helloworld.entity.DaoSession;
 
 
+
 /**
  * Created by Bridge on 2018/1/3.
  * GreenDao创建数据库
